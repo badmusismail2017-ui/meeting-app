@@ -1,0 +1,760 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   RESET
+=================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:linear-gradient(135deg,#4F46E5,#1E3A8A);
+
+}
+
+/* ===================================
+   PAGE LAYOUT
+=================================== */
+
+.meeting-page{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ===================================
+   MEETING CARD
+=================================== */
+
+.meeting-card{
+
+    width:100%;
+
+    max-width:720px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    animation:fadeIn .5s ease;
+
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+.meeting-header{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.meeting-header h1{
+
+    color:#182848;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.meeting-header p{
+
+    color:#666;
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+/* ===================================
+   FORM
+=================================== */
+
+#meetingForm{
+
+    width:100%;
+
+}
+
+/* ===================================
+   FORM GROUPS
+=================================== */
+
+.form-group{
+
+    margin-bottom:25px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+/* ===================================
+   INPUTS & TEXTAREA
+=================================== */
+
+.form-group input,
+
+.form-group textarea{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    color:#333;
+
+    background:#fff;
+
+    outline:none;
+
+    transition:all .3s ease;
+
+}
+
+/* ===================================
+   TEXTAREA
+=================================== */
+
+.form-group textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+    line-height:1.6;
+
+}
+
+/* ===================================
+   PLACEHOLDER
+=================================== */
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder{
+
+    color:#9ca3af;
+
+}
+
+/* ===================================
+   INPUT FOCUS
+=================================== */
+
+.form-group input:focus,
+
+.form-group textarea:focus{
+
+    border-color:#4F46E5;
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+
+}
+
+/* ===================================
+   DATE & TIME
+=================================== */
+
+input[type="date"],
+
+input[type="time"]{
+
+    cursor:pointer;
+
+}
+
+/* ===================================
+   REMOVE DEFAULT SAFARI STYLES
+=================================== */
+
+input,
+
+textarea,
+
+button{
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+}
+
+/* ===================================
+   BUTTON GROUP
+=================================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:18px;
+
+    margin-top:35px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.button-group button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:15px 28px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+/* ===================================
+   SAVE BUTTON
+=================================== */
+
+.save-btn{
+
+    background:#4F46E5;
+
+    color:#ffffff;
+
+}
+
+.save-btn:hover{
+
+    background:#3d35cb;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 25px rgba(79,70,229,.30);
+
+}
+
+.save-btn:active{
+
+    transform:translateY(0);
+
+}
+
+/* ===================================
+   CANCEL BUTTON
+=================================== */
+
+.cancel-btn{
+
+    background:#e5e7eb;
+
+    color:#374151;
+
+}
+
+.cancel-btn:hover{
+
+    background:#d1d5db;
+
+    transform:translateY(-2px);
+
+}
+
+.cancel-btn:active{
+
+    transform:translateY(0);
+
+}
+
+/* ===================================
+   BUTTON ICON SUPPORT
+=================================== */
+
+.button-group button i{
+
+    margin-right:8px;
+
+}
+
+/* ===================================
+   DISABLED BUTTON
+=================================== */
+
+.button-group button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/* ===================================
+   CARD HOVER EFFECT
+=================================== */
+
+.meeting-card{
+
+    transition:transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+.meeting-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 25px 70px rgba(0,0,0,.28);
+
+}
+
+/* ===================================
+   INPUT VALIDATION
+=================================== */
+
+.form-group input:valid,
+
+.form-group textarea:valid{
+
+    border-color:#10b981;
+
+}
+
+.form-group input:invalid:focus,
+
+.form-group textarea:invalid:focus{
+
+    border-color:#ef4444;
+
+    box-shadow:0 0 0 4px rgba(239,68,68,.15);
+
+}
+
+/* ===================================
+   SMOOTH TRANSITIONS
+=================================== */
+
+.form-group,
+
+.button-group,
+
+.meeting-header{
+
+    transition:all .3s ease;
+
+}
+
+/* ===================================
+   LOADING BUTTON STATE
+=================================== */
+
+.save-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+.save-btn.loading::after{
+
+    content:"...";
+
+    margin-left:6px;
+
+}
+
+/* ===================================
+   FORM ANIMATION
+=================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+   INPUT AUTOFILL FIX
+=================================== */
+
+input:-webkit-autofill,
+
+textarea:-webkit-autofill{
+
+    -webkit-box-shadow:0 0 0 1000px #ffffff inset;
+
+    -webkit-text-fill-color:#333;
+
+    transition:background-color 9999s ease-in-out 0s;
+
+}
+
+/* ===================================
+   TABLET RESPONSIVE
+=================================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:25px 15px;
+
+    }
+
+    .meeting-card{
+
+        padding:30px 25px;
+
+    }
+
+    .meeting-header h1{
+
+        font-size:30px;
+
+    }
+
+    .meeting-header p{
+
+        font-size:14px;
+
+    }
+
+    .form-group{
+
+        margin-bottom:20px;
+
+    }
+
+    .form-group input,
+
+    .form-group textarea{
+
+        padding:14px 16px;
+
+        font-size:14px;
+
+    }
+
+    .button-group{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .button-group button{
+
+        width:100%;
+
+    }
+
+}
+
+/* ===================================
+   MOBILE RESPONSIVE
+=================================== */
+
+@media (max-width:480px){
+
+    body{
+
+        padding:15px 10px;
+
+    }
+
+    .meeting-card{
+
+        padding:22px 18px;
+
+        border-radius:16px;
+
+    }
+
+    .meeting-header{
+
+        margin-bottom:25px;
+
+    }
+
+    .meeting-header h1{
+
+        font-size:24px;
+
+    }
+
+    .meeting-header p{
+
+        font-size:13px;
+
+        line-height:1.6;
+
+    }
+
+    .form-group label{
+
+        font-size:14px;
+
+    }
+
+    .form-group input,
+
+    .form-group textarea{
+
+        font-size:14px;
+
+        padding:13px 14px;
+
+    }
+
+    .form-group textarea{
+
+        min-height:120px;
+
+    }
+
+}
+
+/* ===================================
+   ACCESSIBILITY
+=================================== */
+
+button:focus-visible,
+
+input:focus-visible,
+
+textarea:focus-visible{
+
+    outline:3px solid rgba(79,70,229,.35);
+
+    outline-offset:2px;
+
+}
+
+/* ===================================
+   TEXT SELECTION
+=================================== */
+
+::selection{
+
+    background:#4F46E5;
+
+    color:#ffffff;
+
+}
+
+/* ===================================
+   CUSTOM SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4F46E5;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#372ecf;
+
+}
+
+/* ===================================
+   INPUT & BUTTON ANIMATION
+=================================== */
+
+.form-group input,
+
+.form-group textarea,
+
+.button-group button{
+
+    transition:
+            background-color .3s ease,
+            border-color .3s ease,
+            box-shadow .3s ease,
+            transform .2s ease;
+
+}
+
+/* ===================================
+   BUTTON PRESS EFFECT
+=================================== */
+
+.button-group button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ===================================
+   FORM SPACING
+=================================== */
+
+#meetingForm{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ===================================
+   PREVENT OVERFLOW
+=================================== */
+
+.meeting-card{
+
+    overflow:hidden;
+
+}
+
+/* ===================================
+   SMALL FADE EFFECT
+=================================== */
+
+.form-group{
+
+    animation:fadeIn .35s ease;
+
+}
+
+/* ===================================
+   PRINT STYLES
+=================================== */
+
+@media print{
+
+    body{
+
+        background:#ffffff;
+
+        padding:0;
+
+    }
+
+    .meeting-card{
+
+        box-shadow:none;
+
+        border:1px solid #ddd;
+
+    }
+
+    .button-group{
+
+        display:none;
+
+    }
+
+}
+
+/* ===================================
+   END OF FILE
+=================================== */

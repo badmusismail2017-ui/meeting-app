@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        MeetAlarm | Dashboard
+
+    </title>
+
+    <link
+            rel="stylesheet"
+            href="css/dashboard.css">
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet">
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- ===========================
+    SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            Meet<span>Alarm</span>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <a href="#">
+
+                    <i class="fas fa-house"></i>
+
+                    <span>
+
+Dashboard
+
+</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="create-meeting.html">
+
+                    <i class="fas fa-calendar-plus"></i>
+
+                    <span>
+
+Create Meeting
+
+</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    <span>
+
+My Meetings
+
+</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span>
+
+Reminders
+
+</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span>
+
+Analytics
+
+</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#">
+
+                    <i class="fas fa-gear"></i>
+
+                    <span>
+
+Settings
+
+</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <div class="sidebar-footer">
+
+            <button
+                    id="logoutBtn">
+
+                <i class="fas fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===========================
+    MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome back,
+                    <span id="userName">
+
+User
+
+</span>
+
+                    👋
+
+                </p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button
+                        class="notification-btn">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span class="notification-count">
+
+3
+
+</span>
+
+                </button>
+
+                <div class="profile">
+
+                    <img
+                            src="./assets/images/logo.png"
+                            alt="MeetAlarm Logo">
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ===========================
+        STATISTICS
+        =========================== -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="icon blue">
+
+                    <i class="fas fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="totalMeetings">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Total Meetings
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="icon green">
+
+                    <i class="fas fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="todayMeetings">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Today's Meetings
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="icon orange">
+
+                    <i class="fas fa-hourglass-half"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="upcomingMeetings">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Upcoming
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+
+                <div class="icon red">
+
+                    <i class="fas fa-circle-xmark"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="missedMeetings">
+
+                        0
+
+                    </h2>
+
+                    <p>
+
+                        Missed
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+SEARCH & QUICK ACTION
+=========================== -->
+
+        <section class="dashboard-tools">
+
+            <div class="search-box">
+
+                <i class="fas fa-search"></i>
+
+                <label for="searchMeeting" style="position:absolute; left:-9999px;">Search meetings</label>
+                <input
+                        type="text"
+                        id="searchMeeting"
+                        placeholder="Search meetings...">
+
+            </div>
+
+            <div class="tool-buttons">
+
+                <a
+                        href="create-meeting.html"
+                        class="create-btn">
+
+                    <i class="fas fa-plus"></i>
+
+                    New Meeting
+
+                </a>
+
+                <button
+                        id="refreshBtn">
+
+                    <i class="fas fa-rotate"></i>
+
+                    Refresh
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+        MAIN GRID
+        =========================== -->
+
+        <section class="dashboard-grid">
+
+            <!-- ===========================
+            LEFT COLUMN
+            =========================== -->
+
+            <div class="left-column">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Upcoming Meetings
+
+                        </h2>
+
+                        <a href="#">
+
+                            View All
+
+                        </a>
+
+                    </div>
+
+                    <table class="meeting-table">
+
+                        <thead>
+
+                        <tr>
+
+                            <th>
+
+                                Title
+
+                            </th>
+
+                            <th>
+
+                                Date
+
+                            </th>
+
+                            <th>
+
+                                Time
+
+                            </th>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <th>
+
+                                Action
+
+                            </th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody id="meetingTableBody">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                No meetings available.
+
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h2>
+
+                            Recent Activity
+
+                        </h2>
+
+                    </div>
+
+                    <div
+                            id="activityList"
+                            class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-bell"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>
+
+                                    Reminder Activated
+
+                                </h4>
+
+                                <p>
+
+                                    Meeting reminders are enabled.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+
+                                <i class="fas fa-calendar-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>
+
+                                    Dashboard Ready
+
+                                </h4>
+
+                                <p>
+
+                                    Start creating your first meeting.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ===========================
+            RIGHT COLUMN
+            =========================== -->
+
+            <div class="right-column">
+
+                <div class="card">
+
+                    <h2>
+
+                        Quick Actions
+
+                    </h2>
+
+                    <div class="quick-actions">
+
+                        <a
+                                href="create-meeting.html"
+                                class="quick-card">
+
+                            <i class="fas fa-calendar-plus"></i>
+
+                            <span>
+
+Create Meeting
+
+</span>
+
+                        </a>
+
+                        <a
+                                href="#"
+                                class="quick-card">
+
+                            <i class="fas fa-calendar-days"></i>
+
+                            <span>
+
+View Meetings
+
+</span>
+
+                        </a>
+
+                        <a
+                                href="#"
+                                class="quick-card">
+
+                            <i class="fas fa-bell"></i>
+
+                            <span>
+
+Notifications
+
+</span>
+
+                        </a>
+
+                        <a
+                                href="#"
+                                class="quick-card">
+
+                            <i class="fas fa-chart-column"></i>
+
+                            <span>
+
+Reports
+
+</span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>
+
+                        Meeting Progress
+
+                    </h2>
+
+                    <div class="progress-wrapper">
+
+                        <div class="progress-title">
+
+                            Completed Meetings
+
+                            <span>
+
+75%
+
+</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                    class="progress-fill"
+                                    style="width:75%;">
+
+                            </div>
+
+                        </div>
+
+                        <div class="progress-title">
+
+                            Upcoming Meetings
+
+                            <span>
+
+40%
+
+</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                    class="progress-fill purple"
+                                    style="width:40%;">
+
+                            </div>
+
+                        </div>
+
+                        <div class="progress-title">
+
+                            Missed Meetings
+
+                            <span>
+
+10%
+
+</span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div
+                                    class="progress-fill red"
+                                    style="width:10%;">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <h2>
+
+                        Today's Quote
+
+                    </h2>
+
+                    <div class="quote">
+
+                        <i class="fas fa-quote-left"></i>
+
+                        <p>
+
+                            Success usually comes to those who are too busy to be looking for it.
+
+                        </p>
+
+                        <h4>
+
+                            — Henry David Thoreau
+
+                        </h4>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ===========================
+CALENDAR & REMINDERS
+=========================== -->
+
+        <section class="bottom-grid">
+
+            <div class="card calendar-card">
+
+                <div class="card-header">
+
+                    <h2>
+
+                        Calendar
+
+                    </h2>
+
+                </div>
+
+                <div class="calendar">
+
+                    <div class="calendar-month">
+
+                        <h3 id="currentMonth">
+
+                            July 2026
+
+                        </h3>
+
+                    </div>
+
+                    <div class="calendar-days">
+
+                        <span>Sun</span>
+
+                        <span>Mon</span>
+
+                        <span>Tue</span>
+
+                        <span>Wed</span>
+
+                        <span>Thu</span>
+
+                        <span>Fri</span>
+
+                        <span>Sat</span>
+
+                    </div>
+
+                    <div
+                            class="calendar-dates"
+                            id="calendarDates">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <h2>
+
+                        Upcoming Reminders
+
+                    </h2>
+
+                </div>
+
+                <div
+                        class="reminder-list"
+                        id="reminderList">
+
+                    <div class="reminder-item">
+
+                        <div class="reminder-time">
+
+                            09:30 AM
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Development Team Meeting
+
+                            </h4>
+
+                            <p>
+
+                                Reminder will ring 10 minutes before.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="reminder-item">
+
+                        <div class="reminder-time">
+
+                            01:00 PM
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Client Presentation
+
+                            </h4>
+
+                            <p>
+
+                                Reminder Active
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="reminder-item">
+
+                        <div class="reminder-time">
+
+                            05:00 PM
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+
+                                Project Review
+
+                            </h4>
+
+                            <p>
+
+                                Reminder Active
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+                <!-- =====================================
+                MY MEETINGS SECTION
+                ===================================== -->
+
+                <section
+                        id="myMeetingsSection"
+                        class="dashboard-section"
+                        style="display:none;">
+
+                    <div class="section-header">
+
+                        <h2>
+
+                            My Meetings
+
+                        </h2>
+
+                        <p>
+
+                            View and manage all your meetings.
+
+                        </p>
+
+                    </div>
+
+                    <div class="meeting-toolbar">
+
+
+
+                    </div>
+
+                    <div class="meeting-table-wrapper">
+
+                        <table class="meeting-table">
+
+                            <thead>
+
+                            <tr>
+
+                                <th>Title</th>
+
+                                <th>Date</th>
+
+                                <th>Time</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                            </thead>
+
+                            <tbody id="myMeetingsBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+        </div>
+
+
+<!-- =====================================
+EDIT MEETING MODAL
+===================================== -->
+
+<div id="editModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+
+                Edit Meeting
+
+            </h2>
+
+            <button id="closeModal">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+        </div>
+
+        <form id="editMeetingForm">
+
+            <input
+                    type="hidden"
+                    id="editMeetingId">
+
+            <div class="input-group">
+
+                <label>
+
+                    Meeting Title
+
+                </label>
+
+                <label for="editTitle">Meting Title</label>
+                <input
+                        type="text"
+                        id="editTitle"
+                        required>
+
+            </div>
+
+            <div class="input-row">
+
+                <div class="input-group">
+
+                    <label>
+
+                        Date
+
+                    </label>
+
+                    <label for="editDate">Meeting Date</label>
+                    <input
+                            type="date"
+                            id="editDate"
+                            required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+
+                        Time
+
+                    </label>
+
+                    <label for="editTime">Meeting Time</label>
+                    <input
+                            type="time"
+                            id="editTime"
+                            required>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Meeting Link
+
+                </label>
+
+                <label for="editLink">Meeting Link</label>
+                <input
+                        type="url"
+                        id="editLink">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Reminder
+
+                </label>
+
+                <label for="editReminder">Set Reminder</label>
+                <select id="editReminder">
+
+                    <option value="5">
+
+                        5 Minutes Before
+
+                    </option>
+
+                    <option value="10">
+
+                        10 Minutes Before
+
+                    </option>
+
+                    <option value="15">
+
+                        15 Minutes Before
+
+                    </option>
+
+                    <option value="30">
+
+                        30 Minutes Before
+
+                    </option>
+
+                    <option value="60">
+
+                        1 Hour Before
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+
+                    Description
+
+                </label>
+
+                <label for="editDescription">Meeting Description</label>
+                <textarea
+                        id="editDescription"
+                        rows="5"></textarea>
+
+            </div>
+
+            <button
+                    type="submit"
+                    class="update-btn">
+
+                <i class="fas fa-floppy-disk"></i>
+
+                Update Meeting
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- =====================================
+REMINDER MODAL
+===================================== -->
+<div id="reminderModal" class="reminder-modal">
+
+    <div class="reminder-content">
+
+        <div class="reminder-icon">
+            🔔
+        </div>
+
+        <h2 id="reminderTitle">
+            Meeting Reminder
+        </h2>
+
+        <p id="reminderMessage">
+            Your meeting is starting now.
+        </p>
+
+        <div class="reminder-buttons">
+
+            <button
+                    id="joinMeetingBtn"
+                    class="join-btn">
+
+                Join Meeting
+
+            </button>
+
+            <button
+                    id="snoozeMeetingBtn"
+                    class="snooze-btn">
+
+                Snooze 5 Min
+
+            </button>
+
+            <button
+                    id="stopAlarmBtn"
+                    class="stop-btn">
+
+                Stop Alarm
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script
+        type="module"
+        src="js/dashboard.js">
+
+</script>
+
+</body>
+
+</html>

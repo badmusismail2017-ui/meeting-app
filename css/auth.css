@@ -1,0 +1,825 @@
+/*=========================================
+        MeetAlarm Authentication
+        AUTH.CSS
+=========================================*/
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================
+RESET
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+            linear-gradient(
+                    135deg,
+                    #4f46e5,
+                    #6366f1,
+                    #7c3aed
+            );
+
+    overflow-x:hidden;
+
+    overflow-y:auto;
+
+    padding:40px 20px;
+
+}
+
+/*=========================================
+BACKGROUND SHAPES
+=========================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-120px;
+
+    left:-120px;
+
+    z-index:0;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    width:450px;
+
+    height:450px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-180px;
+
+    bottom:-180px;
+
+    z-index:0;
+
+}
+
+/*=========================================
+MAIN CONTAINER
+=========================================*/
+
+.container{
+
+    width:1200px;
+
+    max-width:100%;
+
+    min-height:720px;
+
+    background:#ffffff;
+
+    border-radius:30px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    box-shadow:
+
+            0 30px 70px rgba(0,0,0,.18);
+
+    position:relative;
+
+    z-index:5;
+
+    overflow:hidden;
+
+}
+
+/*=========================================
+LEFT SIDE
+=========================================*/
+
+.left-side{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+
+            linear-gradient(
+                    135deg,
+                    rgba(79,70,229,.95),
+                    rgba(99,102,241,.95)
+            );
+
+}
+
+.left-side::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.left-side::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    right:-80px;
+
+    bottom:-100px;
+
+}
+
+.overlay{
+
+    width:80%;
+
+    color:#ffffff;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.overlay h1{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+
+}
+
+.overlay p{
+
+    font-size:19px;
+
+    line-height:34px;
+
+}
+
+/*=========================================
+RIGHT SIDE
+=========================================*/
+
+.right-side{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    background:#ffffff;
+
+}
+
+form{
+
+    width:100%;
+
+    max-width:430px;
+
+}
+
+form h2{
+
+    font-size:40px;
+
+    color:#0f172a;
+
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    color:#64748b;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================================
+FORM INPUTS
+=========================================*/
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#334155;
+
+    margin-bottom:10px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    height:55px;
+
+    padding:0 18px;
+
+    border:1px solid #dbe2ea;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    background:#ffffff;
+
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    outline:none;
+
+    border-color:#4f46e5;
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+
+}
+
+.input-group input::placeholder{
+
+    color:#94a3b8;
+
+}
+
+/*=========================================
+PASSWORD BOX
+=========================================*/
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box input{
+
+    padding-right:55px;
+
+}
+
+.password-box i{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#64748b;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.password-box i:hover{
+
+    color:#4f46e5;
+
+}
+
+/*=========================================
+CREATE ACCOUNT BUTTON
+=========================================*/
+
+.login-btn{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#4f46e5;
+
+    color:#ffffff;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    margin-top:10px;
+
+}
+
+.login-btn:hover{
+
+    background:#4338ca;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(79,70,229,.25);
+
+}
+
+/*=========================================
+LOGIN LINK
+=========================================*/
+
+.register-text{
+
+    margin-top:25px;
+
+    text-align:center;
+
+    color:#64748b;
+
+    font-size:15px;
+
+}
+
+.register-text a{
+
+    color:#4f46e5;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.register-text a:hover{
+
+    color:#4338ca;
+
+}
+
+/*=========================================
+ERROR MESSAGE
+=========================================*/
+
+.error{
+
+    color:#ef4444;
+
+    font-size:14px;
+
+    margin-top:8px;
+
+}
+
+/*=========================================
+SUCCESS MESSAGE
+=========================================*/
+
+.success{
+
+    color:#16a34a;
+
+    font-size:14px;
+
+    margin-top:8px;
+
+}
+
+/*=========================================
+LOADING BUTTON
+=========================================*/
+
+.login-btn.loading{
+
+    pointer-events:none;
+
+    opacity:.8;
+
+}
+
+.login-btn.loading::after{
+
+    content:"";
+
+    width:18px;
+
+    height:18px;
+
+    border:3px solid rgba(255,255,255,.3);
+
+    border-top-color:#ffffff;
+
+    border-radius:50%;
+
+    display:inline-block;
+
+    margin-left:12px;
+
+    animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/*=========================================
+RESPONSIVE DESIGN
+=========================================*/
+
+@media(max-width:1100px){
+
+    .container{
+
+        width:95%;
+
+        min-height:auto;
+
+    }
+
+    .right-side{
+
+        padding:50px 40px;
+
+    }
+
+    .overlay h1{
+
+        font-size:46px;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .container{
+
+        grid-template-columns:1fr;
+
+        overflow:visible;
+
+    }
+
+    .left-side{
+
+        min-height:280px;
+
+        padding:50px 30px;
+
+    }
+
+    .overlay{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .overlay h1{
+
+        font-size:40px;
+
+        margin-bottom:20px;
+
+    }
+
+    .overlay p{
+
+        font-size:17px;
+
+        line-height:30px;
+
+    }
+
+    .right-side{
+
+        padding:45px 30px;
+
+    }
+
+    form{
+
+        max-width:100%;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+        align-items:flex-start;
+
+    }
+
+    .container{
+
+        border-radius:20px;
+
+    }
+
+    .left-side{
+
+        display:none;
+
+    }
+
+    .right-side{
+
+        padding:35px 25px;
+
+    }
+
+    form h2{
+
+        font-size:34px;
+
+    }
+
+    .subtitle{
+
+        margin-bottom:30px;
+
+    }
+
+    .input-group{
+
+        margin-bottom:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .container{
+
+        border-radius:16px;
+
+    }
+
+    .right-side{
+
+        padding:25px 18px;
+
+    }
+
+    form h2{
+
+        font-size:30px;
+
+    }
+
+    .input-group input{
+
+        height:52px;
+
+        font-size:14px;
+
+        padding:0 15px;
+
+    }
+
+    .password-box input{
+
+        padding-right:50px;
+
+    }
+
+    .password-box i{
+
+        right:15px;
+
+    }
+
+    .login-btn{
+
+        height:54px;
+
+        font-size:15px;
+
+    }
+
+    .register-text{
+
+        font-size:14px;
+
+    }
+
+}
+
+/*=========================================
+SMOOTH TRANSITIONS
+=========================================*/
+
+button,
+input,
+a{
+
+    transition:.3s ease;
+
+}
+
+/*=========================================
+TEXT SELECTION
+=========================================*/
+
+::selection{
+
+    background:#4f46e5;
+
+    color:#ffffff;
+
+}
+
+/*=========================================
+SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e5e7eb;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#4f46e5;
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4338ca;
+
+}
+
+/*=========================================
+FINAL BUG FIXES
+=========================================*/
+
+html{
+
+    height:100%;
+
+}
+
+body{
+
+    min-height:100vh;
+
+}
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.right-side{
+
+    overflow:visible;
+
+}
+
+form{
+
+    padding-bottom:10px;
+
+}
+
+button{
+
+    font-family:inherit;
+
+}
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/*=========================================
+END OF AUTH.CSS
+=========================================*/
