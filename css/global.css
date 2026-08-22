@@ -1,0 +1,155 @@
+/* ========= GLOBAL BASE ========= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ========= CONTACT FORM ========= */
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: border 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.contact-form button:hover {
+    background: #357ABD;
+}
+
+/* ========= TABLET ========= */
+@media (max-width: 768px) {
+    .contact-form {
+        margin: 30px 20px;
+        padding: 25px;
+    }
+}
+
+/* ========= PHONE ONLY ========= */
+@media (max-width: 480px) {
+    .contact-form {
+        margin: 15px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        padding: 12px;
+        font-size: 16px; /* IMPORTANT: stops iPhone auto-zoom */
+    }
+}
+
+/* KILL HORIZONTAL SCROLL ON PHONE */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Make all images and containers respect phone width */
+img, .dashboard-container, .contact-form {
+    max-width: 100%;
+}
+
+/* ========= PHONE STACKING FIX ========= */
+@media (max-width: 768px) {
+    /* Force all grids to stack to 1 column */
+    .dashboard-grid,
+    .stats,
+    .bottom-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    /* Make dashboard container have padding */
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    /* Make all cards full width */
+    .stat-card, .card {
+        width: 100%;
+    }
+}
+
+/* FINAL MOBILE OVERRIDE */
+@media (max-width: 768px) {
+    /* Make sure nothing can be wider than screen */
+    html, body, .dashboard-container, .contact-form, .card, .stat-card {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Kill padding/margin that pushes things out */
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}

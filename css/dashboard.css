@@ -1284,159 +1284,7 @@ TABLE ACTION BUTTONS
 
 }
 
-@media(max-width:768px){
 
-    .topbar{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:20px;
-
-    }
-
-    .dashboard-tools{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-    .tool-buttons{
-
-        width:100%;
-
-        justify-content:space-between;
-
-    }
-
-    .stats{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .quick-actions{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .main-content{
-
-        padding:20px;
-
-    }
-
-    .card{
-
-        padding:22px;
-
-    }
-
-    .meeting-table{
-
-        display:block;
-
-        overflow-x:auto;
-
-        white-space:nowrap;
-
-    }
-
-}
-
-@media(max-width:600px){
-
-    .sidebar{
-
-        position:fixed;
-
-        left:-100%;
-
-        width:260px;
-
-        transition:left .35s ease;
-
-        z-index:1000;
-
-    }
-
-    .sidebar.active{
-
-        left:0;
-
-    }
-
-    .logo{
-
-        text-align:left;
-
-        font-size:28px;
-
-    }
-
-    .logo span{
-
-        display:inline;
-
-    }
-
-    .menu a{
-
-        justify-content:flex-start;
-
-    }
-
-    .menu a span{
-
-        display:inline;
-
-    }
-
-    .sidebar-footer button{
-
-        font-size:15px;
-
-    }
-
-    .main-content{
-
-        margin-left:0;
-
-        padding:18px;
-
-    }
-
-    .topbar h1{
-
-        font-size:28px;
-
-    }
-
-    .search-box input{
-
-        height:50px;
-
-    }
-
-    .create-btn{
-
-        width:100%;
-
-        text-align:center;
-
-    }
-
-    .tool-buttons{
-
-        flex-direction:column;
-
-    }
-
-}
 
 /* ==========================================
 BOTTOM GRID
@@ -1844,29 +1692,7 @@ UPDATE BUTTON
 RESPONSIVE
 ========================================== */
 
-@media(max-width:768px){
 
-    .modal-content{
-
-        padding:25px;
-
-    }
-
-    .input-row{
-
-        grid-template-columns:1fr;
-
-        gap:15px;
-
-    }
-
-    .modal-header h2{
-
-        font-size:24px;
-
-    }
-
-}
 
 /* =====================================
    REMINDER MODAL
@@ -2064,27 +1890,129 @@ RESPONSIVE
 
 }
 
-@media(max-width:600px){
 
-    .reminder-content{
-
-        padding:30px 20px;
-
+@media (max-width: 768px) {
+    /* 0. KILL ALL OVERFLOW */
+    html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 
-    .reminder-buttons{
-
-        flex-direction:column;
-
+    /* 1. WRAPPERS - force to 100% */
+    .dashboard-container,
+    .main-content,
+    .content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 12px !important;
+        box-sizing: border-box !important;
     }
 
-    .reminder-buttons button{
-
-        width:100%;
-
+    /* 2. SIDEBAR - gone */
+    .sidebar {
+        display: none !important;
+    }
+    .sidebar.active {
+        display: block !important;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 260px;
+        height: 100%;
+        z-index: 9999;
     }
 
+    /* 3. FORCE EVERYTHING TO 1 COLUMN */
+    .stats,
+    .dashboard-grid,
+    .bottom-grid,
+    .grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+    }
+
+    /* 4. CARDS - cannot overflow */
+    .stat-card,
+    .card,
+    [class*="card"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 5. YOUR OTHER MOBILE STUFF */
+    .topbar h1 { font-size: 20px; }
+    .search-box input { height: 40px; width: 100%; }
+    .create-btn { width: 100%; text-align: center; }
+    .tool-buttons { flex-direction: column; }
 }
+
+/* 6. KILL THE TABLE OVERFLOW */
+.table-wrapper,
+.upcoming-meetings,
+table {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    display: block !important;
+}
+
+table {
+    min-width: 100% !important;
+    table-layout: fixed !important;
+}
+
+table td, table th {
+    font-size: 12px !important;
+    padding: 8px 4px !important;
+    white-space: nowrap !important;
+}
+
+/* Hide the "Action" column on very small screens */
+@media (max-width: 420px) {
+    table th:last-child,
+    table td:last-child {
+        display: none !important;
+    }
+}
+
+/* 7. FIX TABLE ACTION BUTTONS */
+table td:last-child {
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-width: 80px !important;
+}
+
+table td:last-child button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    background: #ef4444 !important; /* red for delete */
+    color: white !important;
+}
+
+table td:last-child button:first-child {
+    background: #3b82f6 !important; /* blue for edit */
+}
+
+/* Show text if icon is missing */
+table td:last-child button::after {
+    content: attr(data-label) !important;
+    margin-left: 4px !important;
+}
+
+
 /* ==========================================
 END OF DASHBOARD.CSS
 ========================================== */
