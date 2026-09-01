@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 // =====================================
 // MIDDLEWARE
 // =====================================
+app.use(cors({ origin: "https://meet-alarm-frontend.onrender.com" }));
 
 app.use(cors());
 
