@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
 // =====================================
 // API ROUTES - ONLY 1 TIME
 // =====================================
-app.use("/api/meetings", meetingRoutes);
+app.use("/meetings", meetingRoutes);
 
 // =====================================
 // CONNECT TO MONGODB - ADD THIS
