@@ -3,7 +3,7 @@
 // MeetAlarm API Service
 // =====================================
 
-const API_URL = "https://meeting-backend-ixzg.onrender.com";
+const API_URL = "https://meeting-backend-ixzg.onrender.com/meetings";
 
 // =====================================
 // GET ALL MEETINGS
