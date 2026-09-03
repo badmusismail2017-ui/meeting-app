@@ -88,19 +88,18 @@ export async function updateMeeting(id, meeting) {
 // =====================================
 
 export async function deleteMeeting(id) {
-
     const response = await fetch(`${API_URL}/${id}`, {
-
-        method: "DELETE"
-
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        }
     });
 
     if (!response.ok) {
-
-        throw new Error("Failed to delete meeting.");
-
+        // This will now show the REAL error from backend instead of just "Failed to delete"
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `Failed to delete meeting. Status: ${response.status}`);
     }
 
     return await response.json();
-
 }
