@@ -173,7 +173,7 @@ exports.deleteMeeting = (req, res) => {
 
         const meetingIndex = meetings.findIndex(
 
-            meeting => meeting.id === req.params.id
+            meeting => meeting._id === req.params.id
 
         );
 

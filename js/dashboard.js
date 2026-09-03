@@ -358,7 +358,7 @@ meetingTableBody.addEventListener("click", async (event) => {
         await deleteMeeting(meetingId);
 
         meetings = meetings.filter(
-            meeting => meeting.id !== meetingId
+            meeting => meeting._id !== meetingId
         );
 
         updateStatistics();
